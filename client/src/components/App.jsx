@@ -1,15 +1,23 @@
-import React from 'react'
-import {NextUIProvider} from "@nextui-org/react";
-import "tailwindcss/tailwind.css";
-import MainContainer from './MainContainer.jsx'
-import Navigationbar from './Navigationbar.jsx'
-function App (){
-
+import React from 'react';
+import { NextUIProvider } from '@nextui-org/react';
+import 'tailwindcss/tailwind.css';
+import MainContainer from '../containers/MainContainer.jsx';
+import Navigationbar from './Navigationbar.jsx';
+function App() {
+  /**
+  App
+  |-- Navigation Bar
+  |-- MainContainer
+      |-- UserForm (Container)
+            |-- DropDown (small part component)
+      |-- DisplayContainer (Container)
+          
+ */
 
   return (
     <NextUIProvider>
-      <Navigationbar/>
-      <MainContainer/>
+      <Navigationbar />
+      <MainContainer />
     </NextUIProvider>
   );
 }
