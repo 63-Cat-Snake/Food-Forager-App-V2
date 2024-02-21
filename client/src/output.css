@@ -11,7 +11,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(196, 197, 197);
+  background: cream;
   flex-direction: column;
 }
 
@@ -27,20 +27,21 @@
 }
 
 .displayContainer {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 10px;
+  box-shadow: none;
 }
 
 .restaurant {
-  grid-column: span 1;
-  display: flex;
+  border-radius: 3px;
+  box-shadow: none;
+  border-width: 1px;
   justify-content: center;
   align-items: center;
-  width: 300px;
+  width: 20em;
+  border: none;
+  font-weight: bold;
+  &:hover {
+    transform: scale(1.012);
+  }
 }
 
 .restaurantImage {

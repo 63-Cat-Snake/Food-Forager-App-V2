@@ -1,0 +1,683 @@
+[
+    {
+        "_id": "a8b49c84-a92d-4f06-802e-467af49feaf0",
+        "name": "South Beach Cafe",
+        "phone_number": 14159741115,
+        "address": {
+            "street_addr": "800 The Embarcadero",
+            "city": "San Francisco",
+            "state": "CA",
+            "zipcode": "94107",
+            "country": "US",
+            "lat": 37.78129959,
+            "lon": -122.38869477,
+            "street_addr_2": "",
+            "latitude": 37.78129959,
+            "longitude": -122.38869477
+        },
+        "type": "restaurant",
+        "description": "Italian, Pizza",
+        "local_hours": {
+            "operational": {
+                "Monday": "07:00AM - 09:00PM",
+                "Tuesday": "07:00AM - 09:00PM",
+                "Wednesday": "07:00AM - 09:00PM",
+                "Thursday": "07:00AM - 09:00PM",
+                "Friday": "07:00AM - 09:00PM",
+                "Saturday": "08:00AM - 09:00PM",
+                "Sunday": "08:00AM - 09:00PM"
+            },
+            "delivery": {
+                "Monday": "07:00AM - 09:00PM",
+                "Tuesday": "07:00AM - 09:00PM",
+                "Wednesday": "07:00AM - 09:00PM",
+                "Thursday": "07:00AM - 09:00PM",
+                "Friday": "07:00AM - 09:00PM",
+                "Saturday": "08:00AM - 09:00PM",
+                "Sunday": "08:00AM - 09:00PM"
+            },
+            "pickup": {
+                "Monday": "07:00AM - 09:00PM",
+                "Tuesday": "07:00AM - 09:00PM",
+                "Wednesday": "07:00AM - 09:00PM",
+                "Thursday": "07:00AM - 09:00PM",
+                "Friday": "07:00AM - 09:00PM",
+                "Saturday": "08:00AM - 09:00PM",
+                "Sunday": "08:00AM - 09:00PM"
+            },
+            "dine_in": {
+                "Monday": "07:00AM - 09:00PM",
+                "Tuesday": "07:00AM - 09:00PM",
+                "Wednesday": "07:00AM - 09:00PM",
+                "Thursday": "07:00AM - 09:00PM",
+                "Friday": "07:00AM - 09:00PM",
+                "Saturday": "08:00AM - 09:00PM",
+                "Sunday": "08:00AM - 09:00PM"
+            }
+        },
+        "cuisines": [
+            "Breakfast",
+            "Dinner",
+            "Italian",
+            "Lunch",
+            "Pickup",
+            "Pizza",
+            "Salads",
+            "Sandwich",
+            "Sandwiches",
+            "Takeout"
+        ],
+        "food_photos": [
+            "https://cdn-img.mealme.ai/f3d0e396f1b552927092bafa65ef2cc4e8b57c22/68747470733a2f2f6d656469612d63646e2e677275626875622e636f6d2f696d6167652f75706c6f61642f62657462706b3570747a37756a306279616b6a672e6a7067"
+        ],
+        "logo_photos": [
+            "https://cdn-img.mealme.ai/25b450d4e72eea47dccd744c326e49e23343bd0d/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f677275626875622f696d6167652f75706c6f61642f76313531383830323236382f63686a6a356173716f6766696e726f7671376f732e706e67"
+        ],
+        "store_photos": [],
+        "dollar_signs": 2,
+        "pickup_enabled": true,
+        "delivery_enabled": true,
+        "is_open": false,
+        "offers_first_party_delivery": false,
+        "offers_third_party_delivery": true,
+        "miles": 0.2508434381960197,
+        "weighted_rating_value": 4.725654450261779,
+        "aggregated_rating_count": 191
+    },
+    {
+      "_id": "a8b49c84-a92d-4f06-802e-467af49feaf0",
+      "name": "North Beach Cafe",
+      "phone_number": 14159741115,
+      "address": {
+          "street_addr": "800 The Embarcadero",
+          "city": "San Francisco",
+          "state": "CA",
+          "zipcode": "94107",
+          "country": "US",
+          "lat": 37.78129959,
+          "lon": -122.38869477,
+          "street_addr_2": "",
+          "latitude": 37.78129959,
+          "longitude": -122.38869477
+      },
+      "type": "restaurant",
+      "description": "Italian, Pizza",
+      "local_hours": {
+          "operational": {
+              "Monday": "07:00AM - 09:00PM",
+              "Tuesday": "07:00AM - 09:00PM",
+              "Wednesday": "07:00AM - 09:00PM",
+              "Thursday": "07:00AM - 09:00PM",
+              "Friday": "07:00AM - 09:00PM",
+              "Saturday": "08:00AM - 09:00PM",
+              "Sunday": "08:00AM - 09:00PM"
+          },
+          "delivery": {
+              "Monday": "07:00AM - 09:00PM",
+              "Tuesday": "07:00AM - 09:00PM",
+              "Wednesday": "07:00AM - 09:00PM",
+              "Thursday": "07:00AM - 09:00PM",
+              "Friday": "07:00AM - 09:00PM",
+              "Saturday": "08:00AM - 09:00PM",
+              "Sunday": "08:00AM - 09:00PM"
+          },
+          "pickup": {
+              "Monday": "07:00AM - 09:00PM",
+              "Tuesday": "07:00AM - 09:00PM",
+              "Wednesday": "07:00AM - 09:00PM",
+              "Thursday": "07:00AM - 09:00PM",
+              "Friday": "07:00AM - 09:00PM",
+              "Saturday": "08:00AM - 09:00PM",
+              "Sunday": "08:00AM - 09:00PM"
+          },
+          "dine_in": {
+              "Monday": "07:00AM - 09:00PM",
+              "Tuesday": "07:00AM - 09:00PM",
+              "Wednesday": "07:00AM - 09:00PM",
+              "Thursday": "07:00AM - 09:00PM",
+              "Friday": "07:00AM - 09:00PM",
+              "Saturday": "08:00AM - 09:00PM",
+              "Sunday": "08:00AM - 09:00PM"
+          }
+      },
+      "cuisines": [
+          "Breakfast",
+          "Dinner",
+          "Italian",
+          "Lunch",
+          "Pickup",
+          "Pizza",
+          "Salads",
+          "Sandwich",
+          "Sandwiches",
+          "Takeout"
+      ],
+      "food_photos": [
+          "https://cdn-img.mealme.ai/f3d0e396f1b552927092bafa65ef2cc4e8b57c22/68747470733a2f2f6d656469612d63646e2e677275626875622e636f6d2f696d6167652f75706c6f61642f62657462706b3570747a37756a306279616b6a672e6a7067"
+      ],
+      "logo_photos": [
+          "https://cdn-img.mealme.ai/25b450d4e72eea47dccd744c326e49e23343bd0d/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f677275626875622f696d6167652f75706c6f61642f76313531383830323236382f63686a6a356173716f6766696e726f7671376f732e706e67"
+      ],
+      "store_photos": [],
+      "dollar_signs": 2,
+      "pickup_enabled": true,
+      "delivery_enabled": true,
+      "is_open": false,
+      "offers_first_party_delivery": false,
+      "offers_third_party_delivery": true,
+      "miles": 0.2508434381960197,
+      "weighted_rating_value": 4.725654450261779,
+      "aggregated_rating_count": 191
+  },
+  {
+    "_id": "a8b49c84-a92d-4f06-802e-467af49feaf0",
+    "name": "West Beach Cafe",
+    "phone_number": 14159741115,
+    "address": {
+        "street_addr": "800 The Embarcadero",
+        "city": "San Francisco",
+        "state": "CA",
+        "zipcode": "94107",
+        "country": "US",
+        "lat": 37.78129959,
+        "lon": -122.38869477,
+        "street_addr_2": "",
+        "latitude": 37.78129959,
+        "longitude": -122.38869477
+    },
+    "type": "restaurant",
+    "description": "Italian, Pizza",
+    "local_hours": {
+        "operational": {
+            "Monday": "07:00AM - 09:00PM",
+            "Tuesday": "07:00AM - 09:00PM",
+            "Wednesday": "07:00AM - 09:00PM",
+            "Thursday": "07:00AM - 09:00PM",
+            "Friday": "07:00AM - 09:00PM",
+            "Saturday": "08:00AM - 09:00PM",
+            "Sunday": "08:00AM - 09:00PM"
+        },
+        "delivery": {
+            "Monday": "07:00AM - 09:00PM",
+            "Tuesday": "07:00AM - 09:00PM",
+            "Wednesday": "07:00AM - 09:00PM",
+            "Thursday": "07:00AM - 09:00PM",
+            "Friday": "07:00AM - 09:00PM",
+            "Saturday": "08:00AM - 09:00PM",
+            "Sunday": "08:00AM - 09:00PM"
+        },
+        "pickup": {
+            "Monday": "07:00AM - 09:00PM",
+            "Tuesday": "07:00AM - 09:00PM",
+            "Wednesday": "07:00AM - 09:00PM",
+            "Thursday": "07:00AM - 09:00PM",
+            "Friday": "07:00AM - 09:00PM",
+            "Saturday": "08:00AM - 09:00PM",
+            "Sunday": "08:00AM - 09:00PM"
+        },
+        "dine_in": {
+            "Monday": "07:00AM - 09:00PM",
+            "Tuesday": "07:00AM - 09:00PM",
+            "Wednesday": "07:00AM - 09:00PM",
+            "Thursday": "07:00AM - 09:00PM",
+            "Friday": "07:00AM - 09:00PM",
+            "Saturday": "08:00AM - 09:00PM",
+            "Sunday": "08:00AM - 09:00PM"
+        }
+    },
+    "cuisines": [
+        "Breakfast",
+        "Dinner",
+        "Italian",
+        "Lunch",
+        "Pickup",
+        "Pizza",
+        "Salads",
+        "Sandwich",
+        "Sandwiches",
+        "Takeout"
+    ],
+    "food_photos": [
+        "https://cdn-img.mealme.ai/f3d0e396f1b552927092bafa65ef2cc4e8b57c22/68747470733a2f2f6d656469612d63646e2e677275626875622e636f6d2f696d6167652f75706c6f61642f62657462706b3570747a37756a306279616b6a672e6a7067"
+    ],
+    "logo_photos": [
+        "https://cdn-img.mealme.ai/25b450d4e72eea47dccd744c326e49e23343bd0d/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f677275626875622f696d6167652f75706c6f61642f76313531383830323236382f63686a6a356173716f6766696e726f7671376f732e706e67"
+    ],
+    "store_photos": [],
+    "dollar_signs": 2,
+    "pickup_enabled": true,
+    "delivery_enabled": true,
+    "is_open": false,
+    "offers_first_party_delivery": false,
+    "offers_third_party_delivery": true,
+    "miles": 0.2508434381960197,
+    "weighted_rating_value": 4.725654450261779,
+    "aggregated_rating_count": 191
+},
+{
+  "_id": "a8b49c84-a92d-4f06-802e-467af49feaf0",
+  "name": "East Beach Cafe",
+  "phone_number": 14159741115,
+  "address": {
+      "street_addr": "800 The Embarcadero",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipcode": "94107",
+      "country": "US",
+      "lat": 37.78129959,
+      "lon": -122.38869477,
+      "street_addr_2": "",
+      "latitude": 37.78129959,
+      "longitude": -122.38869477
+  },
+  "type": "restaurant",
+  "description": "Italian, Pizza",
+  "local_hours": {
+      "operational": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "delivery": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "pickup": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "dine_in": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      }
+  },
+  "cuisines": [
+      "Breakfast",
+      "Dinner",
+      "Italian",
+      "Lunch",
+      "Pickup",
+      "Pizza",
+      "Salads",
+      "Sandwich",
+      "Sandwiches",
+      "Takeout"
+  ],
+  "food_photos": [
+      "https://cdn-img.mealme.ai/f3d0e396f1b552927092bafa65ef2cc4e8b57c22/68747470733a2f2f6d656469612d63646e2e677275626875622e636f6d2f696d6167652f75706c6f61642f62657462706b3570747a37756a306279616b6a672e6a7067"
+  ],
+  "logo_photos": [
+      "https://cdn-img.mealme.ai/25b450d4e72eea47dccd744c326e49e23343bd0d/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f677275626875622f696d6167652f75706c6f61642f76313531383830323236382f63686a6a356173716f6766696e726f7671376f732e706e67"
+  ],
+  "store_photos": [],
+  "dollar_signs": 2,
+  "pickup_enabled": true,
+  "delivery_enabled": true,
+  "is_open": false,
+  "offers_first_party_delivery": false,
+  "offers_third_party_delivery": true,
+  "miles": 0.2508434381960197,
+  "weighted_rating_value": 4.725654450261779,
+  "aggregated_rating_count": 191
+},
+{
+  "_id": "a8b49c84-a92d-4f06-802e-467af49feaf0",
+  "name": "West Beach Cafe",
+  "phone_number": 14159741115,
+  "address": {
+      "street_addr": "800 The Embarcadero",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipcode": "94107",
+      "country": "US",
+      "lat": 37.78129959,
+      "lon": -122.38869477,
+      "street_addr_2": "",
+      "latitude": 37.78129959,
+      "longitude": -122.38869477
+  },
+  "type": "restaurant",
+  "description": "Italian, Pizza",
+  "local_hours": {
+      "operational": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "delivery": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "pickup": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "dine_in": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      }
+  },
+  "cuisines": [
+      "Breakfast",
+      "Dinner",
+      "Italian",
+      "Lunch",
+      "Pickup",
+      "Pizza",
+      "Salads",
+      "Sandwich",
+      "Sandwiches",
+      "Takeout"
+  ],
+  "food_photos": [
+      "https://cdn-img.mealme.ai/f3d0e396f1b552927092bafa65ef2cc4e8b57c22/68747470733a2f2f6d656469612d63646e2e677275626875622e636f6d2f696d6167652f75706c6f61642f62657462706b3570747a37756a306279616b6a672e6a7067"
+  ],
+  "logo_photos": [
+      "https://cdn-img.mealme.ai/25b450d4e72eea47dccd744c326e49e23343bd0d/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f677275626875622f696d6167652f75706c6f61642f76313531383830323236382f63686a6a356173716f6766696e726f7671376f732e706e67"
+  ],
+  "store_photos": [],
+  "dollar_signs": 2,
+  "pickup_enabled": true,
+  "delivery_enabled": true,
+  "is_open": false,
+  "offers_first_party_delivery": false,
+  "offers_third_party_delivery": true,
+  "miles": 0.2508434381960197,
+  "weighted_rating_value": 4.725654450261779,
+  "aggregated_rating_count": 191
+},
+{
+  "_id": "a8b49c84-a92d-4f06-802e-467af49feaf0",
+  "name": "West Beach Cafe",
+  "phone_number": 14159741115,
+  "address": {
+      "street_addr": "800 The Embarcadero",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipcode": "94107",
+      "country": "US",
+      "lat": 37.78129959,
+      "lon": -122.38869477,
+      "street_addr_2": "",
+      "latitude": 37.78129959,
+      "longitude": -122.38869477
+  },
+  "type": "restaurant",
+  "description": "Italian, Pizza",
+  "local_hours": {
+      "operational": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "delivery": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "pickup": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "dine_in": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      }
+  },
+  "cuisines": [
+      "Breakfast",
+      "Dinner",
+      "Italian",
+      "Lunch",
+      "Pickup",
+      "Pizza",
+      "Salads",
+      "Sandwich",
+      "Sandwiches",
+      "Takeout"
+  ],
+  "food_photos": [
+      "https://cdn-img.mealme.ai/f3d0e396f1b552927092bafa65ef2cc4e8b57c22/68747470733a2f2f6d656469612d63646e2e677275626875622e636f6d2f696d6167652f75706c6f61642f62657462706b3570747a37756a306279616b6a672e6a7067"
+  ],
+  "logo_photos": [
+      "https://cdn-img.mealme.ai/25b450d4e72eea47dccd744c326e49e23343bd0d/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f677275626875622f696d6167652f75706c6f61642f76313531383830323236382f63686a6a356173716f6766696e726f7671376f732e706e67"
+  ],
+  "store_photos": [],
+  "dollar_signs": 2,
+  "pickup_enabled": true,
+  "delivery_enabled": true,
+  "is_open": false,
+  "offers_first_party_delivery": false,
+  "offers_third_party_delivery": true,
+  "miles": 0.2508434381960197,
+  "weighted_rating_value": 4.725654450261779,
+  "aggregated_rating_count": 191
+},
+{
+  "_id": "a8b49c84-a92d-4f06-802e-467af49feaf0",
+  "name": "West Beach Cafe",
+  "phone_number": 14159741115,
+  "address": {
+      "street_addr": "800 The Embarcadero",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipcode": "94107",
+      "country": "US",
+      "lat": 37.78129959,
+      "lon": -122.38869477,
+      "street_addr_2": "",
+      "latitude": 37.78129959,
+      "longitude": -122.38869477
+  },
+  "type": "restaurant",
+  "description": "Italian, Pizza",
+  "local_hours": {
+      "operational": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "delivery": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "pickup": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "dine_in": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      }
+  },
+  "cuisines": [
+      "Breakfast",
+      "Dinner",
+      "Italian",
+      "Lunch",
+      "Pickup",
+      "Pizza",
+      "Salads",
+      "Sandwich",
+      "Sandwiches",
+      "Takeout"
+  ],
+  "food_photos": [
+      "https://cdn-img.mealme.ai/f3d0e396f1b552927092bafa65ef2cc4e8b57c22/68747470733a2f2f6d656469612d63646e2e677275626875622e636f6d2f696d6167652f75706c6f61642f62657462706b3570747a37756a306279616b6a672e6a7067"
+  ],
+  "logo_photos": [
+      "https://cdn-img.mealme.ai/25b450d4e72eea47dccd744c326e49e23343bd0d/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f677275626875622f696d6167652f75706c6f61642f76313531383830323236382f63686a6a356173716f6766696e726f7671376f732e706e67"
+  ],
+  "store_photos": [],
+  "dollar_signs": 2,
+  "pickup_enabled": true,
+  "delivery_enabled": true,
+  "is_open": false,
+  "offers_first_party_delivery": false,
+  "offers_third_party_delivery": true,
+  "miles": 0.2508434381960197,
+  "weighted_rating_value": 4.725654450261779,
+  "aggregated_rating_count": 191
+},
+{
+  "_id": "a8b49c84-a92d-4f06-802e-467af49feaf0",
+  "name": "West Beach Cafe",
+  "phone_number": 14159741115,
+  "address": {
+      "street_addr": "800 The Embarcadero",
+      "city": "San Francisco",
+      "state": "CA",
+      "zipcode": "94107",
+      "country": "US",
+      "lat": 37.78129959,
+      "lon": -122.38869477,
+      "street_addr_2": "",
+      "latitude": 37.78129959,
+      "longitude": -122.38869477
+  },
+  "type": "restaurant",
+  "description": "Italian, Pizza",
+  "local_hours": {
+      "operational": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "delivery": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "pickup": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      },
+      "dine_in": {
+          "Monday": "07:00AM - 09:00PM",
+          "Tuesday": "07:00AM - 09:00PM",
+          "Wednesday": "07:00AM - 09:00PM",
+          "Thursday": "07:00AM - 09:00PM",
+          "Friday": "07:00AM - 09:00PM",
+          "Saturday": "08:00AM - 09:00PM",
+          "Sunday": "08:00AM - 09:00PM"
+      }
+  },
+  "cuisines": [
+      "Breakfast",
+      "Dinner",
+      "Italian",
+      "Lunch",
+      "Pickup",
+      "Pizza",
+      "Salads",
+      "Sandwich",
+      "Sandwiches",
+      "Takeout"
+  ],
+  "food_photos": [
+      "https://cdn-img.mealme.ai/f3d0e396f1b552927092bafa65ef2cc4e8b57c22/68747470733a2f2f6d656469612d63646e2e677275626875622e636f6d2f696d6167652f75706c6f61642f62657462706b3570747a37756a306279616b6a672e6a7067"
+  ],
+  "logo_photos": [
+      "https://cdn-img.mealme.ai/25b450d4e72eea47dccd744c326e49e23343bd0d/68747470733a2f2f7265732e636c6f7564696e6172792e636f6d2f677275626875622f696d6167652f75706c6f61642f76313531383830323236382f63686a6a356173716f6766696e726f7671376f732e706e67"
+  ],
+  "store_photos": [],
+  "dollar_signs": 2,
+  "pickup_enabled": true,
+  "delivery_enabled": true,
+  "is_open": false,
+  "offers_first_party_delivery": false,
+  "offers_third_party_delivery": true,
+  "miles": 0.2508434381960197,
+  "weighted_rating_value": 4.725654450261779,
+  "aggregated_rating_count": 191
+}
+
+]
