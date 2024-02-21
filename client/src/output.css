@@ -28,6 +28,16 @@
 
 .displayContainer {
   box-shadow: none;
+  padding-bottom: 2em;
+}
+
+.rating {
+  color: #FF7C0A;
+}
+
+.milesAway {
+  font-size: .9em;
+  color: #728F66;
 }
 
 .restaurant {
@@ -38,7 +48,6 @@
   align-items: center;
   width: 20em;
   border: none;
-  font-weight: bold;
   &:hover {
     transform: scale(1.012);
   }
@@ -51,21 +60,26 @@
   width: 300px;
   height: 300px;
 }
+
+.popoverButton {
+  color: #262626;
+  text-decoration: underline;
+}
+
 .text-tiny {
   width: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 .px-1 {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
-/* .restaurantFooter {
 
-} */
 
 ::before,
 ::after {

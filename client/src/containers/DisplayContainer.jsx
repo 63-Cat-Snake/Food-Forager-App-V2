@@ -20,7 +20,7 @@ export default function DisplayContainer({ fetchedData }) {
   
 
   return (
-    <div className="gap-2 flex  px-3 place-content-center flex-wrap displayContainer">
+    <div className="gap-2 flex px-3 place-content-center flex-wrap displayContainer">
       {/* fetchedData.map... */
       testRestaurants.map((item, index) => (
         <Card
@@ -31,9 +31,38 @@ export default function DisplayContainer({ fetchedData }) {
         >
           <CardHeader className="pb-1.5 pt-1.5 flex-col items-center justify-center">
             <b className="font-bold text-large">{item.name}</b>
-            {/* <Popover placement="bottom" showArrow={true}>
+            <p className="rating">
+            {item.weighted_rating_value && !isNaN(item.weighted_rating_value) ? (
+              <b>★ {Number(item.weighted_rating_value).toFixed(2)}</b>
+            ) : null}
+            </p>
+            <p className="milesAway">
+                {item.miles.toFixed(2)}
+                {" miles away "}
+              </p>
+            
+          </CardHeader>
+          <CardBody className="overflow-visible p-0 items-center">
+            <Image 
+              width="90%"
+              alt={item.name}
+              className="w-full object-cover h-[140px] restaurantImage"
+              src={item.logo_photos[0]}
+            />
+            
+          </CardBody>
+          <CardFooter className="text-small pt-3 pb-3 flex-col justify-around restaurantFooter">
+            <div className="address">
+              <p className="text-overflow text-default-500 ">
+                {item.address.street_addr}
+                <br/>
+                {item.address.city}
+              </p>
+            </div>
+            <div className="buttonDiv pt-2">
+            <Popover placement="bottom" showArrow={true}>
               <PopoverTrigger>
-                <Button>Hours</Button>
+                <div className="popoverButton">Hours</div>
               </PopoverTrigger>
               <PopoverContent>
                 <div className="px-1 py-2">
@@ -65,31 +94,7 @@ export default function DisplayContainer({ fetchedData }) {
                     <p className="text-tiny uppercase font-bold">Phone: {item.phone_number}</p>
                 </div>
               </PopoverContent>
-            </Popover> */}
-          </CardHeader>
-          {/* <Divider /> */}
-          <CardBody className="overflow-visible p-0 items-center">
-            <Image 
-              width="90%"
-              alt={item.name}
-              className="w-full object-cover h-[140px] restaurantImage"
-              src={item.logo_photos[0]}
-            />
-          </CardBody>
-          {/* <Divider /> */}
-          <CardFooter className="text-small justify-center restaurantFooter">
-            <div className="flex items-start">
-              <p className="mr-4">
-                <b>★ {Number (item.weighted_rating_value).toFixed(2)} </b>
-              </p>
-              <p className="text-default-500 ">
-                {item.address.street_addr}
-                <br />
-                {item.address.city}
-                <br />
-                {item.miles.toFixed(2)}
-                {" miles away "}
-              </p>
+            </Popover>
             </div>
           </CardFooter>
         </Card>
