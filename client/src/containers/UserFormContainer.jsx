@@ -90,7 +90,7 @@ export default function UserForm({
           cuisine = { cuisine }
           isInvalidCuisine = {isInvalidCuisine}
         />
-        <div className = "userFormFlex ">
+        <div className = "userFormInputFlex ">
           <Input
             radius = "sm"
             type = "number"
@@ -109,6 +109,7 @@ export default function UserForm({
             label = { <span>Enter the Distance (in miles)</span> }
             // labelPlacement='outside'
             placeholder = '10'
+            variant = "faded"
           />
           <Input
             radius = "sm"

@@ -58,7 +58,7 @@ export default function MainContainer() {
         // console.log(response.data);
         setDisplayData(response.data);
         const recentFavorite = {};
-        data[0].restaurantList.forEach((restaurant) => {
+        response.data.forEach((restaurant) => {
           recentFavorite[restaurant._id] = restaurant.favorite || false;
         });
         setFavorite(recentFavorite);
