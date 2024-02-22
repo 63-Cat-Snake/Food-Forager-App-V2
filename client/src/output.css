@@ -37,6 +37,11 @@
   margin-right: -17.5em;
   width: 30px;
   height: 30px;
+  &:hover {
+    transform: scale(1.09);
+    
+  }
+  
 }
 
 .rating {
@@ -56,9 +61,6 @@
   align-items: center;
   width: 20em;
   border: none;
-  &:hover {
-    transform: scale(1.012);
-  }
 }
 
 .restaurantImage {

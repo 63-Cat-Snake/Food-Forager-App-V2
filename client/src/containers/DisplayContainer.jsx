@@ -37,8 +37,8 @@ export default function DisplayContainer({ fetchedData }) {
         <Card
           className="restaurant rounded-sm"
           key={index}
-          isPressable
-          onPress={() => console.log("Card pressed")}
+          // isPressable
+          // onPress={() => console.log("Card pressed")}
         >
           <div
             className="heart-icon top-1 right-1 pr-1 pt-1 cursor-pointer z-50"
