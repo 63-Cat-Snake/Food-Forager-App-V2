@@ -14,21 +14,25 @@ import {
 import testRestaurants from '../testRestaurants.json';
 import heartUnselected from '../assets/heartUnselected.png';
 import heartSelected from '../assets/heartSelected.png';
+import axios from 'axios';
 
-export default function DisplayContainer({ fetchedData }) {
-  const [selectedHearts, setSelectedHearts] = useState({});
+export default function DisplayContainer({ fetchedData, request, favorite, setFavorite }) {
+  
+  const handleHeartClick = async (id) => {
+    const response = await axios
+      .patch('/favorite', {
+        ...request,
+        _id: id
+      }, 
+      {
+        headers: { 'Content-type': 'application/json' }
+      })
+      .catch(error => console.log('Error in patch request', error));
+    console.log(response);
 
-  const handleHeartClick = (index) => {
-    setSelectedHearts((prevState) => {
-      // Make patch request
-      // Send user id
-      // Send Lattitude Longitude of user
-      // handle heart click, onclick send fetch patch req on backend, to endpoint
-      // send an object starting at index 0, store as restuarant 'ID'
-      // when API is called we need to destroy data from DB upon startup
-      // add another button to display fav restuarants
-      const newState = { ...prevState, [index]: !prevState[index] };
-      console.log('New state:', newState);
+    setFavorite((prevState) => {
+      const newState = { ...prevState, [id]: !prevState[id] };
+      console.log('Favorite:', newState);
       return newState;
     });
   };
@@ -43,14 +47,13 @@ export default function DisplayContainer({ fetchedData }) {
             key={index}
             // isPressable
             // onPress={() => console.log("Card pressed")}
-            
           >
             <div
               className='heart-icon top-1 right-1 pr-1 pt-1 cursor-pointer z-50'
-              onClick={() => handleHeartClick(index)}
+              onClick={() => handleHeartClick(item._id)}
             >
               <img
-                src={selectedHearts[index] ? heartSelected : heartUnselected}
+                src={favorite[item._id] ? heartSelected : heartUnselected}
                 alt='heart'
               />
             </div>
@@ -60,25 +63,30 @@ export default function DisplayContainer({ fetchedData }) {
                 {item.weighted_rating_value &&
                 !isNaN(item.weighted_rating_value) ? (
                   <b>★ {Number(item.weighted_rating_value).toFixed(2)}</b>
-                ) : null}
+                ) : '☆'}
               </p>
               <p className='milesAway'>
                 {item.miles.toFixed(2)}
                 {' miles away '}
               </p>
             </CardHeader>
+            
             <CardBody className='overflow-visible p-0 items-center'>
+              <div className='imageContainer'>
               <Image
                 width='100%'
+                height='100%'
                 alt={item.name}
-                className='w-full object-cover h-[100px] restaurantImage'
+                className='w-full h-full object-cover restaurantImage'
                 src={item.logo_photos[0]}
               />
+              </div>
             </CardBody>
+            
             <CardFooter className='restaurantFooter flex-col text-small pt-3 pb-3'>
               <div className='address'>
                 <p>{item.address.street_addr}</p>
-                <p>{item.address.city}</p>
+                <p>{item.address.city},</p><p>{item.address.state}</p>
               </div>
               <div className='buttonDiv pt-2'>
                 <Popover placement='bottom' showArrow={true}>
