@@ -1,8 +1,8 @@
 import React from 'react';
 import { NextUIProvider } from '@nextui-org/react';
 import 'tailwindcss/tailwind.css';
-import MainContainer from '../containers/MainContainer.jsx';
-import Navigationbar from './Navigationbar.jsx';
+import MainContainer from './containers/MainContainer.jsx';
+import Navigationbar from './components/Navigationbar.jsx';
 function App() {
   /**
   App

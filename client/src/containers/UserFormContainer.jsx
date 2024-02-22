@@ -44,7 +44,7 @@ export default function UserForm({
         console.log('ERROR IN GETTING USER LOCATION', error.message);
       };
       if ('geolocation' in navigator) {
-        console.log('about to run geolocation thing');
+        console.log('about to run geolocation thingy');
         setSubmitButtonText('grabbing your location...');
         navigator.geolocation.getCurrentPosition(
           successCallback,

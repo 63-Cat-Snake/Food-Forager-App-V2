@@ -11,23 +11,58 @@ import {
   PopoverContent,
   Button,
 } from "@nextui-org/react";
+import testRestaurants from '../testRestaurants.json';
+
+
 
 export default function DisplayContainer({ fetchedData }) {
+
+  
+
   return (
-    <div className="gap-2 grid grid-cols-2 sm:grid-cols-4 displayContainer">
-      {fetchedData.map((item, index) => (
+    <div className="gap-2 flex px-3 place-content-center flex-wrap displayContainer">
+      {/* fetchedData.map... */
+      testRestaurants.map((item, index) => (
         <Card
-          className="restaurant"
-          shadow="sm"
+          className="restaurant rounded-sm"
           key={index}
           isPressable
           onPress={() => console.log("item pressed")}
         >
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start items-center justify-center">
+          <CardHeader className="pb-1.5 pt-1.5 flex-col items-center justify-center">
             <b className="font-bold text-large">{item.name}</b>
+            <p className="rating">
+            {item.weighted_rating_value && !isNaN(item.weighted_rating_value) ? (
+              <b>★ {Number(item.weighted_rating_value).toFixed(2)}</b>
+            ) : null}
+            </p>
+            <p className="milesAway">
+                {item.miles.toFixed(2)}
+                {" miles away "}
+              </p>
+            
+          </CardHeader>
+          <CardBody className="overflow-visible p-0 items-center">
+            <Image 
+              width="90%"
+              alt={item.name}
+              className="w-full object-cover h-[140px] restaurantImage"
+              src={item.logo_photos[0]}
+            />
+            
+          </CardBody>
+          <CardFooter className="text-small pt-3 pb-3 flex-col justify-around restaurantFooter">
+            <div className="address">
+              <p className="text-overflow text-default-500 ">
+                {item.address.street_addr}
+                <br/>
+                {item.address.city}
+              </p>
+            </div>
+            <div className="buttonDiv pt-2">
             <Popover placement="bottom" showArrow={true}>
               <PopoverTrigger>
-                <Button>Hours</Button>
+                <div className="popoverButton">Hours</div>
               </PopoverTrigger>
               <PopoverContent>
                 <div className="px-1 py-2">
@@ -60,33 +95,7 @@ export default function DisplayContainer({ fetchedData }) {
                 </div>
               </PopoverContent>
             </Popover>
-          </CardHeader>
-          <Divider />
-          <CardBody className="overflow-visible p-0">
-            <Image
-              shadow="sm"
-              radius="lg"
-              width="100%"
-              alt={item.name}
-              className="w-full object-cover h-[140px] restaurantImage"
-              src={item.logo_photos[0]}
-            />
-          </CardBody>
-          <Divider />
-          <CardFooter className="text-small justify-between restaurantFooter">
-            <p>
-              <b>★ {Number(item.weighted_rating_value).toFixed(2)} Rating</b>
-            </p>
-            <p className="text-default-500">
-              {item.address.street_addr}
-              {", "}
-              {item.address.city}
-              {", "}
-              {item.address.state}
-              {", "}
-              {item.miles.toFixed(2)}
-              {" mi away, "}Is open: {item.is_open ? "Yes" : "No"}
-            </p>
+            </div>
           </CardFooter>
         </Card>
       ))}
