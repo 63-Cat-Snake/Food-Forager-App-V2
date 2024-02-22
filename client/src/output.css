@@ -11,16 +11,25 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgb(196, 197, 197);
+  background: rgb(250, 146, 105);
+  /* background-image: url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/0fcf79ba23f4894a.svg");
+  /* "https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/e5f92076cd06b8f1.svg" */
   flex-direction: column;
 }
 
 .userFormContainer {
   display: flex;
+  height: 90vh;
+  width: 100vw;
+  background: url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/0fcf79ba23f4894a.svg") left no-repeat, url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/e5f92076cd06b8f1.svg") right no-repeat;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  width: 300px;
+}
+.userFormFlex {
+  display: flex;
+  width: 60%;
+  gap: 2%;
 }
 .userFormItem {
   margin: 10px;

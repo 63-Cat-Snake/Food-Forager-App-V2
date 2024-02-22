@@ -4,10 +4,10 @@ import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@nex
 
 export default function Navigationbar() {
   return (
-    <Navbar>
+    <Navbar back>
       <NavbarBrand>
         {/* <AcmeLogo /> */}
-        <h1 className="font-bold text-inherit">Food Forager</h1>
+        <h1 className="font-bold text-inherit"><b>Food Foragers</b></h1>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
         <NavbarItem>
@@ -31,7 +31,7 @@ export default function Navigationbar() {
           <Link href="#">Login</Link>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
+          <Button as={Link} href="#" variant="flat">
             Sign Up
           </Button>
         </NavbarItem>
