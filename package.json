@@ -8,12 +8,10 @@
   "license": "ISC",
   "scripts": {
     "clean": "rm client/dist/bundle.js",
-
     "build": "webpack --mode production",
     "start": "cross-env NODE_ENV=production nodemon server/server.js",
-    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development nodemon server/server.js\""
+    "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development nodemon server/server.js\"",
     "test": "jest --watch"
-
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",
