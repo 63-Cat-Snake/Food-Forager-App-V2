@@ -32,7 +32,7 @@ export default function Navigationbar() {
   }, [lastScrollY]);
 
   return (
-    <Navbar back> {/*class = { show ? "" : "hidden" } style = {{ top: (navbarTop-70)+'px' }}>*/}
+    <Navbar> {/*class = { show ? "" : "hidden" } style = {{ top: (navbarTop-70)+'px' }}>*/}
       <NavbarBrand>
         {/* <AcmeLogo /> */}
         <h1 className="font-bold text-inherit"><b>Food Foragers</b></h1>

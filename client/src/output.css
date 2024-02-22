@@ -7,12 +7,13 @@
 2. Allow adding a border to an element by just adding a border-width. (https://github.com/tailwindcss/tailwindcss/pull/116)
 */
 
+
 .mainContainer {
   display: flex;
   width: 99vw;
   justify-content: center;
   align-items: center;
-  background: rgb(250, 146, 105);
+  background: cream;
   flex-direction: column;
 }
 
@@ -24,7 +25,12 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  @media (max-width: 1300px) {
+    background: url("https://d3i4yxtzktqr9n.cloudfront.net/web-eats-v2/e5f92076cd06b8f1.svg") right no-repeat;
+  }
 }
+
 .userFormFlex {
   display: flex;
   width: 60%;
@@ -36,6 +42,7 @@
 
 .displayContainer {
   box-shadow: none;
+  margin-top: 10px;
   padding-bottom: 2em;
 }
 
@@ -43,13 +50,11 @@
   padding: 5px;
   margin-bottom: -1.5em;
   margin-right: -17.5em;
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   &:hover {
     transform: scale(1.09);
-    
   }
-  
 }
 
 .rating {
@@ -64,10 +69,9 @@
 .restaurant {
   border-radius: 3px;
   box-shadow: none;
-  border-width: 1px;
   justify-content: center;
   align-items: center;
-  width: 20em;
+  width: 22em;
   border: none;
 }
 
@@ -75,13 +79,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 300px;
-  height: 300px;
+}
+
+.address {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #081A21;
 }
 
 .popoverButton {
-  color: #262626;
+  color: #1A5974;
   text-decoration: underline;
+  &:hover {
+    transform: scale(1.04);
+  }
 }
 
 .text-tiny {

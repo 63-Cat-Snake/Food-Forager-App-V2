@@ -22,6 +22,9 @@ export default function DisplayContainer({ fetchedData }) {
 
   const handleHeartClick = (index) => {
     setSelectedHearts(prevState => {
+      // Make patch request
+      // Send user id
+      // Send Lattitude Longitude of user
       const newState = { ...prevState, [index]: !prevState[index] };
       console.log('New state:', newState);
       return newState;
@@ -33,7 +36,6 @@ export default function DisplayContainer({ fetchedData }) {
     <div className="gap-2 flex px-3 place-content-center flex-wrap displayContainer">
       {/* fetchedData.map... */
       testRestaurants.map((item, index) => (
-        
         <Card
           className="restaurant rounded-sm"
           key={index}
@@ -57,24 +59,23 @@ export default function DisplayContainer({ fetchedData }) {
                 {item.miles.toFixed(2)}
                 {" miles away "}
               </p>
-            
           </CardHeader>
           <CardBody className="overflow-visible p-0 items-center">
             <Image 
-              width="90%"
+              width="100%"
               alt={item.name}
-              className="w-full object-cover h-[140px] restaurantImage"
+              className="w-full object-cover h-[100px] restaurantImage"
               src={item.logo_photos[0]}
             />
-            
           </CardBody>
-          <CardFooter className="text-small pt-3 pb-3 flex-col justify-around restaurantFooter">
+          <CardFooter className="restaurantFooter flex-col text-small pt-3 pb-3">
             <div className="address">
-              <p className="text-overflow text-default-500 ">
-                {item.address.street_addr}
-                <br/>
-                {item.address.city}
-              </p>
+            <p>
+              {item.address.street_addr}
+            </p>
+            <p>
+              {item.address.city}
+            </p>
             </div>
             <div className="buttonDiv pt-2">
             <Popover placement="bottom" showArrow={true}>
@@ -115,7 +116,6 @@ export default function DisplayContainer({ fetchedData }) {
             </div>
           </CardFooter>
         </Card>
-        
       ))}
     </div>
   );
