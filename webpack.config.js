@@ -2,6 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 const config = {
+  mode: process.env.NODE_ENV,
   entry: "./client/src/index.jsx",
   output: {
     filename: "bundle.js",
@@ -42,6 +43,23 @@ const config = {
       filename: "index.html",
     }),
   ],
+  devServer: {
+    host: 'localhost',
+    port: 8080,
+    static: {
+      directory: path.join(__dirname, 'client'),
+      publicPath: '/',
+    },
+    hot: true, // reload without a refresh
+    historyApiFallback: true,
+    headers: { 'Access-Control-Allow-Origin': '*' },
+    proxy: {
+      '/': {
+        target: 'http://localhost:3000/',
+        secure: false,
+      },
+    },
+  },
 };
 
 // nextui({
