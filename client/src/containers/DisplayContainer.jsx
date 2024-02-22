@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardHeader,
@@ -12,23 +12,40 @@ import {
   Button,
 } from "@nextui-org/react";
 import testRestaurants from '../testRestaurants.json';
+import heartUnselected from '../assets/heartUnselected.png'; 
+import heartSelected from '../assets/heartSelected.png';
 
 
 
 export default function DisplayContainer({ fetchedData }) {
+  const [selectedHearts, setSelectedHearts] = useState({});
 
+  const handleHeartClick = (index) => {
+    setSelectedHearts(prevState => {
+      const newState = { ...prevState, [index]: !prevState[index] };
+      console.log('New state:', newState);
+      return newState;
+    });
+  };
   
 
   return (
     <div className="gap-2 flex px-3 place-content-center flex-wrap displayContainer">
       {/* fetchedData.map... */
       testRestaurants.map((item, index) => (
+        
         <Card
           className="restaurant rounded-sm"
           key={index}
           isPressable
-          onPress={() => console.log("item pressed")}
+          onPress={() => console.log("Card pressed")}
         >
+          <div
+            className="heart-icon top-1 right-1 pr-1 pt-1 cursor-pointer z-50"
+            onClick={() => handleHeartClick(index)}
+          >
+            <img src={selectedHearts[index] ? heartSelected : heartUnselected} alt="heart" />
+          </div>
           <CardHeader className="pb-1.5 pt-1.5 flex-col items-center justify-center">
             <b className="font-bold text-large">{item.name}</b>
             <p className="rating">
@@ -98,6 +115,7 @@ export default function DisplayContainer({ fetchedData }) {
             </div>
           </CardFooter>
         </Card>
+        
       ))}
     </div>
   );
