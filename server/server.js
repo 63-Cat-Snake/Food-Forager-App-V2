@@ -27,7 +27,9 @@ app.get('/output.css', (req, res) => {
 
 app.get('/bundle.js', (req, res) => {
   console.log('Request for bundle.js received');
-  res.sendFile(path.join(__dirname, '..', 'client', 'dist', 'bundle.js'), {});
+  res
+    .sendStatus(200)
+    .sendFile(path.join(__dirname, '..', 'client', 'dist', 'bundle.js'), {});
 });
 
 app.get('/', (req, res) => {

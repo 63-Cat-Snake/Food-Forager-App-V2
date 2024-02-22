@@ -11,7 +11,7 @@
     "build-dev": "webpack --mode development",
     "build-prod": "webpack --mode production",
     "start": "nodemon server/server.js",
-    "test": "jest --testTimeout=5000"
+    "test": "jest --watch"
   },
   "dependencies": {
     "@nextui-org/react": "^2.2.9",

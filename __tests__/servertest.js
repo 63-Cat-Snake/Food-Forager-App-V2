@@ -8,32 +8,26 @@ const MONGO_URI =
 // const server = 'http://localhost:3000';
 // const request = supertest(app);
 
-describe('Route integration', () => {
-  //   /* Connecting to the database before each test. */
-  //   beforeEach(async () => {
-  //     await mongoose.connect(MONGO_URI);
-  //   });
+describe('Route integration unit test', () => {
+  /* Connecting to the database before each test. */
+  beforeEach(async () => {
+    await mongoose.connect(MONGO_URI);
+  });
 
-  //   /* Closing database connection after each test. */
-  //   afterEach(async () => {
-  //     await mongoose.connection.close();
-  //   });
+  /* Closing database connection after each test. */
+  afterEach(async () => {
+    await mongoose.connection.close();
+  });
 
   // GET request to ROOT
-//   test('GET /', (done) => {
-//     request(app)
-//       .get('/')
-//       .expect(200)
-//       .expect('Content-Type', /html/) // Expect the Content-Type to be HTML
-//       .end((err, res) => {
-//         if (err) return done(err);
-//         // You can add more checks here. For example, check if the response body contains a specific string:
-//         expect(res.text).toContain('<!DOCTYPE html>');
-//         return done();
-//       });
-//   });
+  describe('Root endpoint', () => {
+    it('should respond with HTML file and status 200', async () => {
+      const res = await request(app).get('/');
+      expect(res.statusCode).toBe(200);
+      expect(res.header['content-type']).toBe('text/html; charset=UTF-8');
+    });
+  });
 });
-
 
 /*
 
