@@ -98,7 +98,7 @@ export default function UserForm({
             color = { isInvalidDistance && 'danger' }
             errorMessage = { isInvalidDistance && 'Please enter a valid distance (<20 mi)' }
             endContent = {
-              <div className="pointer-events-none flex items-center">
+              <div className="pointer-events-none">
                 <span className="text-default-400 text-small">mi</span>
               </div>
             }

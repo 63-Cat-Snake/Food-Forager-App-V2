@@ -39,17 +39,22 @@
   display: flex;
   width: 100%;
   gap: 2%;
-  object-fit: fill;
 }
 .userFormItem {
   margin: 10px;
+  width: 40%;
+  overflow: auto;
+  
+}
+
+input {
+  width: 90%;
 }
 
 .buttonDiv {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
+  /* display: flex; */
+  /* justify-content: center;
+  align-items: center; */
 }
 
 .displayContainer {
