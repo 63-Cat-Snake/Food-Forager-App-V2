@@ -31,13 +31,25 @@
   }
 }
 
+.userForm {
+  width: 40em;
+}
+
 .userFormFlex {
   display: flex;
-  width: 60%;
+  width: 100%;
   gap: 2%;
+  object-fit: fill;
 }
 .userFormItem {
   margin: 10px;
+}
+
+.buttonDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .displayContainer {
@@ -49,7 +61,7 @@
 .heart-icon {
   padding: 5px;
   margin-bottom: -1.5em;
-  margin-right: -17.5em;
+  margin-right: -19.5em;
   width: 25px;
   height: 25px;
   &:hover {
@@ -75,10 +87,21 @@
   border: none;
 }
 
+.imageContainer {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+}
+
 .restaurantImage {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
+  width: 100%;
 }
 
 .address {
