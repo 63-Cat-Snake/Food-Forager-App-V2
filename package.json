@@ -8,9 +8,8 @@
   "license": "ISC",
   "scripts": {
     "clean": "rm client/dist/bundle.js",
-    "build-dev": "webpack --mode development",
-    "build-prod": "webpack --mode production",
-    "start": "nodemon server/server.js",
+    "build": "webpack --mode production",
+    "start": "cross-env NODE_ENV=production nodemon server/server.js",
     "dev": "concurrently \"cross-env NODE_ENV=development webpack serve --open\" \"cross-env NODE_ENV=development nodemon server/server.js\""
   },
   "dependencies": {
