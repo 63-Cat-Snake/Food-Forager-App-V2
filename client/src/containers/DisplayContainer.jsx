@@ -23,6 +23,10 @@ export default function DisplayContainer({ fetchedData }) {
       // Make patch request
       // Send user id
       // Send Lattitude Longitude of user
+      // handle heart click, onclick send fetch patch req on backend, to endpoint
+      // send an object starting at index 0, store as restuarant 'ID'
+      // when API is called we need to destroy data from DB upon startup
+      // add another button to display fav restuarants
       const newState = { ...prevState, [index]: !prevState[index] };
       console.log('New state:', newState);
       return newState;
@@ -39,6 +43,7 @@ export default function DisplayContainer({ fetchedData }) {
             key={index}
             // isPressable
             // onPress={() => console.log("Card pressed")}
+            
           >
             <div
               className='heart-icon top-1 right-1 pr-1 pt-1 cursor-pointer z-50'
