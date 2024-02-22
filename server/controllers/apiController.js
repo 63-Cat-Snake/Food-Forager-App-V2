@@ -5,6 +5,48 @@ const Restaurant = require('../models/restaurantModel');
 
 const APIKey = '1e971a009f6e4ab1bd6aa263960bd053';
 
+apiController.favorite = async (req, res, next) => {
+  console.log('req.body is ', req.body);
+  let { cuisine, budget, distance, latitude, longitude, _id } = req.body;
+
+  latitude = Math.floor(latitude);
+  longitude = Math.floor(longitude);
+
+  try {
+    const result = await Restaurant.findOne({
+      cuisine,
+      budget,
+      distance,
+      latitude,
+      longitude,
+    });
+
+    // Loop through and update favoriate TRUE OR FALSE
+    result.restaurantList.forEach((restaurant) => {
+      if (restaurant._id === _id)
+        restaurant.favorite = restaurant.favorite ? false : true;
+    });
+    res.locals.restaurantData = result.restaurantList;
+
+    // Need to update the list in DATABASE after changing the value
+    await Restaurant.findOneAndUpdate(
+      { cuisine, budget, distance, latitude, longitude },
+      { restaurantList: result.restaurantList }
+    );
+
+    return next();
+  } catch (err) {
+    return next({
+      log: `An error occured in apiController.favorite: ${err}`,
+      // Status 500 Databse Error
+      status: 500,
+      message: {
+        err: 'An error occured in apiController.favorite',
+      },
+    });
+  }
+};
+
 apiController.onload = async (req, res, next) => {
   try {
     // Return an Array with ALL RESTAURANTS from last call
@@ -49,6 +91,7 @@ apiController.formatRequestData = async (req, res, next) => {
       longitude,
     });
     console.log('result is ', result);
+
     if (result !== null) {
       res.locals.restaurantData = result.restaurantList;
       return next();
@@ -58,11 +101,15 @@ apiController.formatRequestData = async (req, res, next) => {
       `https://api.spoonacular.com/food/restaurants/search?cuisine=${cuisine}&budget=${budget}&distance=${distance}&lat=${latitude}&lng=${longitude}&apiKey=${APIKey}`
     );
 
-    //restaurantData will be an array of restaurant objects
+    // restaurantData will be an array of restaurant objects
     console.log(apiResponseData);
     res.locals.restaurantData = apiResponseData.data.restaurants;
 
     const restaurantList = apiResponseData.data.restaurants;
+
+    // Add Favorite to each restaurant object
+    restaurantList.forEach((restaurant) => (restaurant.favorite = false));
+
     const restaurant = new Restaurant({
       latitude,
       longitude,

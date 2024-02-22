@@ -6,20 +6,23 @@ const mongoose = require('mongoose');
 const apiController = require('./controllers/apiController.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
-
+/* ---------------------------------------- MongoDB ---------------------------------------- */
 const MONGO_URI =
   'mongodb+srv://kravchuknick:jDnS1N7Xt0kPSBP8@food-forager-app-v2.jzse2jb.mongodb.net/';
-
 /* Username: kravchuknick  - Password: jDnS1N7Xt0kPSBP8  */
-mongoose.connect(MONGO_URI, {
-  dbName: 'users', // sets the name of the DB
-});
-// .then(() => console.log('Connected to Mongo DB.'))
-// .catch((err) => console.log(err));
+mongoose
+  .connect(MONGO_URI, {
+    dbName: 'users', // sets the name of the DB
+  })
+  .then(() => console.log('Connected to Mongo DB.'))
+  .catch((err) => console.log(err));
 
-// Serve static files from the 'dist' directory
+/* ---------------------------------------- Static File ---------------------------------------- */
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'client', 'dist')));
 
+/* ---------------------------------------- Requests ---------------------------------------- */
 app.get('/output.css', (req, res) => {
   console.log('Request for output.css received');
   res.sendFile(path.join(__dirname, '..', 'client', 'src', 'output.css'), {});
@@ -51,6 +54,12 @@ app.get(
   }
 );
 
+app.patch('/favorite', apiController.favorite, (req, res) => {
+  const { restaurantData } = res.locals;
+  return res.status(200).json(restaurantData);
+});
+
+/* ---------------------------------------- Global Errors ---------------------------------------- */
 app.use('*', (req, res) => {
   res.status(404).send('Not Found');
 });
