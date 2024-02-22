@@ -28,8 +28,13 @@ app.get('/output.css', (req, res) => {
 app.get('/bundle.js', (req, res) => {
   console.log('Request for bundle.js received');
   res
-    .sendStatus(200)
+    .status(200)
     .sendFile(path.join(__dirname, '..', 'client', 'dist', 'bundle.js'), {});
+});
+
+app.get('/restaurants', apiController.onload, (req, res) => {
+  const { restaurantData } = res.locals;
+  return res.status(200).json(restaurantData);
 });
 
 app.get('/', (req, res) => {
@@ -61,6 +66,8 @@ app.use((err, req, res, next) => {
   return res.status(errObj.status).json(errObj.message);
 });
 
-module.exports = app.listen(PORT, () => {
+app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+// module.exports = app;

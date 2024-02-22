@@ -5,6 +5,25 @@ const Restaurant = require('../models/restaurantModel');
 
 const APIKey = '1e971a009f6e4ab1bd6aa263960bd053';
 
+apiController.onload = async (req, res, next) => {
+  try {
+    // Return an Array with ALL RESTAURANTS from last call
+    res.locals.restaurantData = await Restaurant.find()
+      .sort({ _id: -1 })
+      .limit(1);
+    return next();
+  } catch (err) {
+    return next({
+      log: `An error occured in apiController.onload: ${err}`,
+      // Status 500 Databse Error
+      status: 500,
+      message: {
+        err: 'An error occured in apiController.onload',
+      },
+    });
+  }
+};
+
 apiController.formatRequestData = async (req, res, next) => {
   let { cuisine, budget, distance, latitude, longitude } = req.params;
 
