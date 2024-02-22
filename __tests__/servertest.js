@@ -37,8 +37,26 @@ describe('Route integration unit test', () => {
     it('should be in Array form', async () => {
       const res = await request(app).get('/restaurants');
       expect(res.body).toBeInstanceOf(Array);
+
+    });
+
+    it('should be an Array with a length of 1', async () => {
+      const res = await request(app).get('/restaurants');
+      expect(res.body.length).toEqual(1);
+    });
+
+    it('should have an object with properties from MongoDB schema model', async () => {
+      const res = await request(app).get('/restaurants');
+      console.log(res.body);
+      expect(res.body[0]).toHaveProperty("cuisine");
+      expect(res.body[0]).toHaveProperty("latitude");
+      expect(res.body[0]).toHaveProperty("longitude");
+      expect(res.body[0]).toHaveProperty('restaurantList');
+      expect(res.body[0]).toHaveProperty("budget");
+      expect(res.body[0]).toHaveProperty("distance");
     });
   });
+
 
   xdescribe('Favorite endpoint', () => {
     it('should respond with JSON format and status 200', async () => {
