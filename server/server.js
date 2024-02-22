@@ -55,8 +55,7 @@ app.get(
 );
 
 app.patch('/favorite', apiController.favorite, (req, res) => {
-  const { restaurantData } = res.locals;
-  return res.status(200).json(restaurantData);
+  res.status(200).send('Database updated!');
 });
 
 /* ---------------------------------------- Global Errors ---------------------------------------- */

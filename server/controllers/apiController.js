@@ -26,7 +26,6 @@ apiController.favorite = async (req, res, next) => {
       if (restaurant._id === _id)
         restaurant.favorite = restaurant.favorite ? false : true;
     });
-    res.locals.restaurantData = result.restaurantList;
 
     // Need to update the list in DATABASE after changing the value
     await Restaurant.findOneAndUpdate(
