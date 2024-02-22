@@ -9,22 +9,26 @@ export default function UserForm({
   submitButtonText,
   setSubmitButtonText,
 }) {
-  const [cuisine, setCuisine] = useState('Whatcha in the mood for?');
-  const [distance, setDistance] = useState(0);
-  const [budget, setBudget] = useState(0);
+  const [cuisine, setCuisine] = useState('empty');
+  const [distance, setDistance] = useState(10);
+  const [budget, setBudget] = useState(20);
   const [latitude, setLatitude] = useState('');
   const [longitude, setLongitude] = useState('');
   const [incompleteFields, setIncompleteFields] = useState(false);
+  const [isInvalidCuisine, setIsInvalidCuisine] = useState(false);
   const [isInvalidDistance, setIsInvalidDistance] = useState(false);
   const [isInvalidBudget, setIsInvalidBudget] = useState(false);
 
   const handleSubmit = (e) => {
+    if (cuisine === 'empty') {
+      setIsInvalidCuisine(true);
+    } else setIsInvalidCuisine(false);
     if (
       isInvalidBudget ||
       isInvalidDistance ||
       distance === 0 ||
       budget === 0 ||
-      cuisine === 'Whatcha in the mood for?'
+      cuisine === 'empty'
     ) {
       setIncompleteFields(true);
     } else {
@@ -40,7 +44,7 @@ export default function UserForm({
         console.log('ERROR IN GETTING USER LOCATION', error.message);
       };
       if ('geolocation' in navigator) {
-        console.log('about to run geolocation thing');
+        console.log('about to run geolocation thingy');
         setSubmitButtonText('grabbing your location...');
         navigator.geolocation.getCurrentPosition(
           successCallback,
@@ -65,7 +69,7 @@ export default function UserForm({
   useEffect(() => {
     if (isNaN(distance)) {
       setIsInvalidDistance(true);
-    } else if (distance > 20) {
+    } else if (distance > 20 || distance < 0) {
       setIsInvalidDistance(true);
     } else {
       setIsInvalidDistance(false);
@@ -79,54 +83,71 @@ export default function UserForm({
   }, [budget]);
 
   return (
-    <div className='userFormContainer'>
+    <div className = 'userFormContainer'>
       <DropDown
-        className='userFormItem'
-        color='secondary'
-        setCuisine={setCuisine}
-        cuisine={cuisine}
+        setCuisine = { setCuisine }
+        cuisine = { cuisine }
+        isInvalidCuisine = {isInvalidCuisine}
       />
-      <Input
-        className='userFormItem'
-        color={isInvalidDistance && 'danger'}
-        errorMessage={
-          isInvalidDistance && 'Please enter a valid distance (<20 mi)'
-        }
-        endContent='mi'
-        onChange={(e) => setDistance(e.target.value)}
-        style={{ border: 'none' }}
-        size='md'
-        label={
-          <span style={{ color: 'black' }}>How close does it need to be?</span>
-        }
-        labelPlacement='outside'
-        placeholder='distance (in miles)'
-      />
+      <div className = "userFormFlex">
+        <Input
+          radius = "sm"
+          type = "number"
+          className = 'userFormItem'
+          color = { isInvalidDistance && 'danger' }
+          errorMessage = { isInvalidDistance && 'Please enter a valid distance (<20 mi)' }
+          endContent = {
+            <div className="pointer-events-none flex items-center">
+              <span className="text-default-400 text-small">mi</span>
+            </div>
+          }
+          defaultValue = { 10 }
+          onChange = { (e) => setDistance(e.target.value) }
+          style = {{ border: 'none' }}
+          size = 'sm'
+          label = { <span>Enter the Distance (in miles)</span> }
+          // labelPlacement='outside'
+          placeholder = '10'
+        />
+        <Input
+          radius = "sm"
+          type = "number"
+          className = 'userFormItem'
+          color = { isInvalidBudget && 'danger' }
+          errorMessage = { isInvalidBudget && 'Please enter a valid dollar value' }
+          startContent= {
+            <div className="pointer-events-none flex items-center">
+              <span className="text-default-400 text-small">$</span>
+            </div>
+          }
+          defaultValue = { 20 }
+          onChange = { (e) => setBudget(e.target.value) }
+          style = {{ border: 'none' }}
+          size = 'sm'
+          label = { <span>How much are you tryna spend?</span> }
+          // labelPlacement='outside'
+          placeholder = 'Enter your budget (in USD)'
+        />
+      </div>
+      
       {/* add maximum distance */}
-      <Input
-        className='userFormItem'
-        color={isInvalidBudget && 'danger'}
-        errorMessage={isInvalidBudget && 'Please enter a valid dollar value'}
-        startContent='$'
-        onChange={(e) => setBudget(e.target.value)}
-        style={{ border: 'none' }}
-        size='md'
-        label={
-          <span style={{ color: 'black' }}>How much are you tryna spend?</span>
-        }
-        labelPlacement='outside'
-        placeholder='budget (in USD)'
-      />
+      <div className = "userFormFlex">
+        
+      </div>
       {/* <UserLocation setLatitude={(latitude) => setLatitude(latitude)} setLongitude={(longitude) => setLongitude(longitude)}/> */}
-      {incompleteFields && <h2 style={{ color: 'red' }}>Incomplete Fields!</h2>}
+      {incompleteFields && <h2 style = {{ color: 'red' }}>Incomplete Fields!</h2> }
       <Button
-        isLoading={loadingState}
-        color='primary'
-        onPress={handleSubmit}
-        className='bg-gradient-to-tr from-pink-500 to-yellow-500 text-white shadow-lg userFormItem'
-        size='md'
+        radius = 'sm'
+        isLoading = {loadingState}
+        color = 'default'
+        variant = "solid"
+        onPress = {handleSubmit}
+        className = "userFormItem"
+        style = {{backgroundColor: 'black', color: 'white', fontSize: '16px', border: 'none', marginTop: '1%', width: '20%'}}
+        // 'bg-gradient-to-tr from-pink-500 to-yellow-500 text-black shadow-lg userFormItem'
+        size = 'md'
       >
-        {submitButtonText}
+        <b>{ submitButtonText }</b>
       </Button>
     </div>
   );

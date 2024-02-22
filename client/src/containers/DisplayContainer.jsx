@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Card,
   CardHeader,
@@ -11,23 +11,76 @@ import {
   PopoverContent,
   Button,
 } from "@nextui-org/react";
+import testRestaurants from '../testRestaurants.json';
+import heartUnselected from '../assets/heartUnselected.png'; 
+import heartSelected from '../assets/heartSelected.png';
+
+
 
 export default function DisplayContainer({ fetchedData }) {
+  const [selectedHearts, setSelectedHearts] = useState({});
+
+  const handleHeartClick = (index) => {
+    setSelectedHearts(prevState => {
+      // Make patch request
+      // Send user id
+      // Send Lattitude Longitude of user
+      const newState = { ...prevState, [index]: !prevState[index] };
+      console.log('New state:', newState);
+      return newState;
+    });
+  };
+  
+
   return (
-    <div className="gap-2 grid grid-cols-2 sm:grid-cols-4 displayContainer">
-      {fetchedData.map((item, index) => (
+    <div className="gap-2 flex px-3 place-content-center flex-wrap displayContainer">
+      {/* fetchedData.map... */
+      testRestaurants.map((item, index) => (
         <Card
-          className="restaurant"
-          shadow="sm"
+          className="restaurant rounded-sm"
           key={index}
-          isPressable
-          onPress={() => console.log("item pressed")}
+          // isPressable
+          // onPress={() => console.log("Card pressed")}
         >
-          <CardHeader className="pb-0 pt-2 px-4 flex-col items-start items-center justify-center">
+          <div
+            className="heart-icon top-1 right-1 pr-1 pt-1 cursor-pointer z-50"
+            onClick={() => handleHeartClick(index)}
+          >
+            <img src={selectedHearts[index] ? heartSelected : heartUnselected} alt="heart" />
+          </div>
+          <CardHeader className="pb-1.5 pt-1.5 flex-col items-center justify-center">
             <b className="font-bold text-large">{item.name}</b>
+            <p className="rating">
+            {item.weighted_rating_value && !isNaN(item.weighted_rating_value) ? (
+              <b>★ {Number(item.weighted_rating_value).toFixed(2)}</b>
+            ) : null}
+            </p>
+            <p className="milesAway">
+                {item.miles.toFixed(2)}
+                {" miles away "}
+              </p>
+          </CardHeader>
+          <CardBody className="overflow-visible p-0 items-center">
+            <Image 
+              width="100%"
+              alt={item.name}
+              className="w-full object-cover h-[100px] restaurantImage"
+              src={item.logo_photos[0]}
+            />
+          </CardBody>
+          <CardFooter className="restaurantFooter flex-col text-small pt-3 pb-3">
+            <div className="address">
+            <p>
+              {item.address.street_addr}
+            </p>
+            <p>
+              {item.address.city}
+            </p>
+            </div>
+            <div className="buttonDiv pt-2">
             <Popover placement="bottom" showArrow={true}>
               <PopoverTrigger>
-                <Button>Hours</Button>
+                <div className="popoverButton">Hours</div>
               </PopoverTrigger>
               <PopoverContent>
                 <div className="px-1 py-2">
@@ -60,33 +113,7 @@ export default function DisplayContainer({ fetchedData }) {
                 </div>
               </PopoverContent>
             </Popover>
-          </CardHeader>
-          <Divider />
-          <CardBody className="overflow-visible p-0">
-            <Image
-              shadow="sm"
-              radius="lg"
-              width="100%"
-              alt={item.name}
-              className="w-full object-cover h-[140px] restaurantImage"
-              src={item.logo_photos[0]}
-            />
-          </CardBody>
-          <Divider />
-          <CardFooter className="text-small justify-between restaurantFooter">
-            <p>
-              <b>★ {Number(item.weighted_rating_value).toFixed(2)} Rating</b>
-            </p>
-            <p className="text-default-500">
-              {item.address.street_addr}
-              {", "}
-              {item.address.city}
-              {", "}
-              {item.address.state}
-              {", "}
-              {item.miles.toFixed(2)}
-              {" mi away, "}Is open: {item.is_open ? "Yes" : "No"}
-            </p>
+            </div>
           </CardFooter>
         </Card>
       ))}
