@@ -3,7 +3,6 @@ import DisplayContainer from './DisplayContainer.jsx';
 import UserForm from './UserFormContainer.jsx';
 import axios from 'axios';
 
-
 export default function MainContainer() {
   const [displayData, setDisplayData] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
@@ -33,6 +32,15 @@ export default function MainContainer() {
     .catch((err) => console.error('Error:', err));
   }, []);
 
+
+  useEffect(() => {
+    fetch('/restaurants')
+      .then((response) => response.json())
+      .then((data) => {
+        setDisplayData(data[0].restaurantList);
+      })
+      .catch((err) => console.error('Error:', err));
+  }, []);
 
   const handleSearch = async (
     cuisine,
