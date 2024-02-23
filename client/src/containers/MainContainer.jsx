@@ -8,6 +8,30 @@ export default function MainContainer() {
   const [errorMessage, setErrorMessage] = useState('');
   const [loadingState, setLoadingState] = useState(false);
   const [submitButtonText, setSubmitButtonText] = useState('Find Restaurants!');
+  const [request, setRequest] = useState({});
+  const [favorite, setFavorite] = useState({});
+
+  useEffect(() => {
+    fetch("/restaurants")
+    .then((response) => response.json())
+    .then((data) => {
+      setDisplayData(data[0].restaurantList);
+      setRequest({
+        cuisine: data[0].cuisine,
+        budget: data[0].budget,
+        distance: data[0].distance,
+        latitude: data[0].latitude,
+        longitude: data[0].longitude
+      })
+      const recentFavorite = {};
+      data[0].restaurantList.forEach((restaurant) => {
+        recentFavorite[restaurant._id] = restaurant.favorite;
+      });
+      setFavorite(recentFavorite);
+    })
+    .catch((err) => console.error('Error:', err));
+  }, []);
+
 
   useEffect(() => {
     fetch('/restaurants')
@@ -41,6 +65,11 @@ export default function MainContainer() {
         // console.log(response)
         // console.log(response.data);
         setDisplayData(response.data);
+        const recentFavorite = {};
+        response.data.forEach((restaurant) => {
+          recentFavorite[restaurant._id] = restaurant.favorite || false;
+        });
+        setFavorite(recentFavorite);
       }
     } catch (error) {
       console.error('Error fetching restaurant data:', error);
@@ -58,7 +87,7 @@ export default function MainContainer() {
         submitButtonText={submitButtonText}
         setSubmitButtonText={setSubmitButtonText}
       />
-      <DisplayContainer fetchedData={displayData} />
+      <DisplayContainer fetchedData={displayData} request={request} favorite={favorite} setFavorite={setFavorite}/>
     </div>
   );
 }
