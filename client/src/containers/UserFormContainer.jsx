@@ -84,71 +84,76 @@ export default function UserForm({
 
   return (
     <div className = 'userFormContainer'>
-      <DropDown
-        setCuisine = { setCuisine }
-        cuisine = { cuisine }
-        isInvalidCuisine = {isInvalidCuisine}
-      />
-      <div className = "userFormFlex">
-        <Input
-          radius = "sm"
-          type = "number"
-          className = 'userFormItem'
-          color = { isInvalidDistance && 'danger' }
-          errorMessage = { isInvalidDistance && 'Please enter a valid distance (<20 mi)' }
-          endContent = {
-            <div className="pointer-events-none flex items-center">
-              <span className="text-default-400 text-small">mi</span>
-            </div>
-          }
-          defaultValue = { 10 }
-          onChange = { (e) => setDistance(e.target.value) }
-          style = {{ border: 'none' }}
-          size = 'sm'
-          label = { <span>Enter the Distance (in miles)</span> }
-          // labelPlacement='outside'
-          placeholder = '10'
+      <div className="userForm">
+        <DropDown
+          setCuisine = { setCuisine }
+          cuisine = { cuisine }
+          isInvalidCuisine = {isInvalidCuisine}
         />
-        <Input
-          radius = "sm"
-          type = "number"
-          className = 'userFormItem'
-          color = { isInvalidBudget && 'danger' }
-          errorMessage = { isInvalidBudget && 'Please enter a valid dollar value' }
-          startContent= {
-            <div className="pointer-events-none flex items-center">
-              <span className="text-default-400 text-small">$</span>
-            </div>
-          }
-          defaultValue = { 20 }
-          onChange = { (e) => setBudget(e.target.value) }
-          style = {{ border: 'none' }}
-          size = 'sm'
-          label = { <span>How much are you tryna spend?</span> }
-          // labelPlacement='outside'
-          placeholder = 'Enter your budget (in USD)'
-        />
-      </div>
-      
-      {/* add maximum distance */}
-      <div className = "userFormFlex">
+        <div className = "userFormInputFlex ">
+          <Input
+            radius = "sm"
+            type = "number"
+            className = 'userFormItem'
+            color = { isInvalidDistance && 'danger' }
+            errorMessage = { isInvalidDistance && 'Please enter a valid distance (<20 mi)' }
+            endContent = {
+              <div className="pointer-events-none">
+                <span className="text-default-400 text-small">mi</span>
+              </div>
+            }
+            defaultValue = { 10 }
+            onChange = { (e) => setDistance(e.target.value) }
+            style = {{ border: 'none' }}
+            size = 'sm'
+            label = { <span>Enter the Distance (in miles)</span> }
+            // labelPlacement='outside'
+            placeholder = '10'
+            variant = "faded"
+          />
+          <Input
+            radius = "sm"
+            type = "number"
+            className = 'userFormItem'
+            color = { isInvalidBudget && 'danger' }
+            errorMessage = { isInvalidBudget && 'Please enter a valid dollar value' }
+            startContent= {
+              <div className="pointer-events-none flex items-center">
+                <span className="text-default-400 text-small">$</span>
+              </div>
+            }
+            defaultValue = { 20 }
+            onChange = { (e) => setBudget(e.target.value) }
+            style = {{ border: 'none' }}
+            size = 'sm'
+            label = { <span>Price Range</span> }
+            // labelPlacement='outside'
+            placeholder = 'Enter your budget (in USD)'
+          />
+        </div>
         
+        {/* add maximum distance */}
+        <div className = "userFormFlex">
+          
+        </div>
+        {/* <UserLocation setLatitude={(latitude) => setLatitude(latitude)} setLongitude={(longitude) => setLongitude(longitude)}/> */}
+        {incompleteFields && <h2 style = {{ color: 'red' }}>Incomplete Fields!</h2> }
+        <div className='buttonDiv'> 
+        <Button
+          radius = 'sm'
+          isLoading = {loadingState}
+          color = 'default'
+          variant = "solid"
+          onPress = {handleSubmit}
+          className = "userFormItem"
+          style = {{backgroundColor: 'black', color: 'white', fontSize: '16px', border: 'none', marginTop: '1%', width: '20%'}}
+          // 'bg-gradient-to-tr from-pink-500 to-yellow-500 text-black shadow-lg userFormItem'
+          // size = 'md'
+        >
+          <b>{ submitButtonText }</b>
+        </Button>
+        </div>
       </div>
-      {/* <UserLocation setLatitude={(latitude) => setLatitude(latitude)} setLongitude={(longitude) => setLongitude(longitude)}/> */}
-      {incompleteFields && <h2 style = {{ color: 'red' }}>Incomplete Fields!</h2> }
-      <Button
-        radius = 'sm'
-        isLoading = {loadingState}
-        color = 'default'
-        variant = "solid"
-        onPress = {handleSubmit}
-        className = "userFormItem"
-        style = {{backgroundColor: 'black', color: 'white', fontSize: '16px', border: 'none', marginTop: '1%', width: '20%'}}
-        // 'bg-gradient-to-tr from-pink-500 to-yellow-500 text-black shadow-lg userFormItem'
-        size = 'md'
-      >
-        <b>{ submitButtonText }</b>
-      </Button>
     </div>
   );
 }
