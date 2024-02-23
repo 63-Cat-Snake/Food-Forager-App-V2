@@ -3,12 +3,20 @@ import DisplayContainer from './DisplayContainer.jsx';
 import UserForm from './UserFormContainer.jsx';
 import axios from 'axios';
 
-
 export default function MainContainer() {
   const [displayData, setDisplayData] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
   const [loadingState, setLoadingState] = useState(false);
   const [submitButtonText, setSubmitButtonText] = useState('Find Restaurants!');
+
+  useEffect(() => {
+    fetch('/restaurants')
+      .then((response) => response.json())
+      .then((data) => {
+        setDisplayData(data[0].restaurantList);
+      })
+      .catch((err) => console.error('Error:', err));
+  }, []);
 
   const handleSearch = async (
     cuisine,
